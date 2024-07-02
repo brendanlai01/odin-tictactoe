@@ -143,3 +143,5 @@ const ticTacToe = (function(){
         makePlayer,
     }
 })();
+
+displayController.display();

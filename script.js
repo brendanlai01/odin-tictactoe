@@ -42,9 +42,11 @@ const gameboard = (function() {
         for(let i = 0; i < WINNING_COMBINATIONS.length; i++){
             const [a, b, c] = WINNING_COMBINATIONS[i];
             if(board[a] === 'X' && board[b] === 'X' && board[c] === 'X' ){
-                return console.log('X wins');
+                console.log('X wins');
+                return true;
             } else if (board[a] === 'O' && board[b] === 'O' && board[c] === 'O'){
-                return console.log('O wins');
+                console.log('O wins');
+                return true;
             }
         }
         return false;

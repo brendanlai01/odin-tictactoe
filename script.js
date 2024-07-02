@@ -13,7 +13,10 @@ const gameboard = (function() {
     let playerOneWins = 0;
     let playerTwoWins = 0;
     const add = (mark, position) => {
+        mark.toUpperCase();
         board[position] = mark;
+        displayController.display();
+        checkWin();
     };
     const checkWin = () => {
         for(let i = 0; i < WINNING_COMBINATIONS.length; i++){

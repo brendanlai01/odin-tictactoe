@@ -31,6 +31,13 @@ const gameboard = (function() {
         //     checkWin();
         // }
     };
+
+    const checkDupe = (index) =>{
+        if(board[index] === 'X' || board[index] === 'O'){
+            return false;
+        }else return true;
+    }
+
     const checkWin = () => {
         for(let i = 0; i < WINNING_COMBINATIONS.length; i++){
             const [a, b, c] = WINNING_COMBINATIONS[i];
@@ -46,6 +53,7 @@ const gameboard = (function() {
     return{
         add,
         checkWin,
+        checkDupe,
         getBoard,
         indexBoard,
     }

@@ -80,3 +80,11 @@ const displayController = (function() {
         display,
     }
 })();
+
+function createPlayer(name, mark){
+    let wins = 0;
+    const getWins = () => wins;
+    const addWin = () => wins++;
+    return {name, mark, getWins, addWin};
+}
+

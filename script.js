@@ -47,15 +47,15 @@ const gameboard = (function() {
 
 const displayController = (function() {
     const display = () =>{
-        console.log(`Current gameboard array: ${gameboard.board}`);
+        console.log(`Current gameboard array: ${gameboard.getBoard()}`);
         console.log('Current game board display:')
         console.log(
             `
-            ${gameboard.board[0]} | ${gameboard.board[1]} | ${gameboard.board[2]}
+            ${gameboard.indexBoard(0)} | ${gameboard.indexBoard(1)} | ${gameboard.indexBoard(2)}
             ----------
-            ${gameboard.board[3]} | ${gameboard.board[4]} | ${gameboard.board[5]}
+            ${gameboard.indexBoard(3)} | ${gameboard.indexBoard(4)} | ${gameboard.indexBoard(5)}
             ----------
-            ${gameboard.board[6]} | ${gameboard.board[7]} | ${gameboard.board[8]}
+            ${gameboard.indexBoard(6)} | ${gameboard.indexBoard(7)} | ${gameboard.indexBoard(8)}
             `
         );
     }

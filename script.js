@@ -36,3 +36,23 @@ const gameboard = (function() {
         board,
     }
 })();
+
+const displayController = (function() {
+    const display = () =>{
+        console.log(`Current gameboard array: ${gameboard.board}`);
+        console.log('Current game board display:')
+        console.log(
+            `
+            ${gameboard.board[0]} | ${gameboard.board[1]} | ${gameboard.board[2]}
+            ----------
+            ${gameboard.board[3]} | ${gameboard.board[4]} | ${gameboard.board[5]}
+            ----------
+            ${gameboard.board[6]} | ${gameboard.board[7]} | ${gameboard.board[8]}
+            `
+        );
+    }
+
+    return{
+        display,
+    }
+})();

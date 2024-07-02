@@ -88,3 +88,58 @@ function createPlayer(name, mark){
     return {name, mark, getWins, addWin};
 }
 
+const ticTacToe = (function(){
+    let turnCounter = 1;
+    let board = gameboard.getBoard();
+    let win = false;
+    let playerOne;
+    let playerTwo;
+    let playerTurn;
+
+    const play = () =>{
+        win = false;
+        do{
+            if(gameboard.checkWin()){
+                win = true;
+                break;
+           }
+            if(turnCounter === 1){
+                 playerTurn = prompt(" (X's Turn) Where do you want to place your mark?");
+                 playerTurn = parseInt(`${playerTurn}`);
+                 if(gameboard.checkDupe(playerTurn)){
+                    gameboard.add('X', playerTurn);
+                    displayController.display();
+                    turnCounter = 2;
+                    continue;
+                 }else{
+                    alert('Spot is already taken! Rethink of a spot.')
+                    continue;
+                 }
+            }
+            if(turnCounter === 2){
+                playerTurn = prompt(" (O's Turn) Where do you want to place your mark?");
+                playerTurn = parseInt(`${playerTurn}`);
+                if(gameboard.checkDupe(playerTurn)){
+                    gameboard.add('O', playerTurn);
+                    displayController.display();
+                    turnCounter = 1;
+                    continue;
+                 }else{
+                    alert('Spot is already taken! Rethink of a spot.')
+                    continue;
+                 }
+           }
+           
+        } while(win === false)
+    }
+
+    const makePlayer = (name, mark) =>{
+        if(playerOne === undefined) playerOne = createPlayer(name, mark);
+        else if (playerTwo === undefined) playerTwo = createPlayer(name, mark);
+    }
+
+    return{
+        play,
+        makePlayer,
+    }
+})();

@@ -12,6 +12,13 @@ const gameboard = (function() {
     ];
     let playerOneWins = 0;
     let playerTwoWins = 0;
+
+    const getBoard = () => {
+        return board;
+    }
+    const indexBoard = (index) => {
+        return board[index];
+    }
     const add = (mark, position) => {
         mark.toUpperCase();
         board[position] = mark;
@@ -33,7 +40,8 @@ const gameboard = (function() {
     return{
         add,
         checkWin,
-        board,
+        getBoard,
+        indexBoard,
     }
 })();
 

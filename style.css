@@ -12,6 +12,13 @@ body{
     color: white;
 }
 
+.center-align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .header, .footer{
     background-color: var(--light-grey);
 }

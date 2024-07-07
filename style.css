@@ -27,4 +27,8 @@ body{
     background-color: var(--dark-grey);
     height: calc(100vh - 200px);
     flex-direction: row;
+.game-container{
+    width: 500px;
+    height: 500px;
+    border: solid red 1px;
 }

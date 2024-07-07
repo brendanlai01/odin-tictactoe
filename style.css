@@ -27,6 +27,21 @@ body{
     background-color: var(--dark-grey);
     height: calc(100vh - 200px);
     flex-direction: row;
+
+.player-one, .player-two{
+    border: solid red 1px;
+    width: 250px;
+    height: 150px;
+}
+
+.player-one h3, .player-two h3{
+    margin: 0;
+}
+
+#playerOne-name, #playerTwo-name{
+    margin: 8px;
+}
+
 .game-container{
     width: 500px;
     height: 500px;

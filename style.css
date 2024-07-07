@@ -23,7 +23,7 @@ body{
     background-color: var(--light-grey);
 }
 
-.game{
+.main-content{
     background-color: var(--dark-grey);
     height: calc(100vh - 200px);
     flex-direction: row;

@@ -11,3 +11,11 @@ body{
     margin: 0;
     color: white;
 }
+
+.header, .footer{
+    background-color: var(--light-grey);
+}
+
+.game{
+    background-color: var(--dark-grey);
+}

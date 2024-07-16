@@ -119,24 +119,40 @@ function createPlayer(name, mark){
 }
 
 const ticTacToe = (function(){
+    let board = gameboard.getBoard();
     let win = false;
     let playerOne;
     let playerTwo;
     let gridSpots = document.querySelectorAll(`.gridspot`);
+    let result = document.querySelector('#results');
+    let dialog = document.querySelector('.restart');
 
     const play = () =>{
-        if(gameboard.checkWin() === 'X wins'){
+        let checkWin = gameboard.checkWin();
+        let checkFull = gameboard.checkFull();
+        if(checkWin === 'X wins'){
             console.log('X won');
             displayController.removeSpotListeners(gridSpots, playOne);
             displayController.removeSpotListeners(gridSpots, playTwo);
+            result.textContent = `${playerOne.name} Wins!`
+            dialog.showModal();
             win = true;
             return;
         }
-        if(gameboard.checkWin() === 'O wins'){
+        else if(checkWin === 'O wins'){
             console.log('O won');
             displayController.removeSpotListeners(gridSpots, playOne);
             displayController.removeSpotListeners(gridSpots, playTwo);
+            result.textContent = `${playerTwo.name} Wins!`
+            dialog.showModal();
             win = true;
+            return;
+        }
+        else if(checkFull === 9){
+            displayController.removeSpotListeners(gridSpots, playOne);
+            displayController.removeSpotListeners(gridSpots, playTwo);
+            result.textContent = `Tie!`
+            dialog.showModal();
             return;
         }
         else if(playerOne.getTurn() === 1 && playerTwo.getTurn() === 0){

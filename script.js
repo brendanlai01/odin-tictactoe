@@ -68,6 +68,14 @@ const displayController = (function() {
         })
     }
 
+    const updateDisplay = () =>{
+        gridSpots.forEach((square) => {
+            square.textContent = gameboard.indexBoard(
+              square.getAttribute("data-index")
+            );
+        });
+    }
+
     }
 
     return{

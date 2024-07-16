@@ -76,12 +76,26 @@ const displayController = (function() {
         });
     }
 
+    const addMark = (index, mark) =>{
+        let currentSquare = document.querySelector(`[data-index="${index}"]`);
+
+        if(mark === 'X'){
+            gameboard.add('X', index);
+            currentSquare.textContent = 'X';
+        }
+        else{
+            gameboard.add('O', index);
+            currentSquare.textContent = 'X';
+        } 
     }
 
     return{
-        display,
+        addSpotListeners,
+        removeSpotListeners,
+        updateDisplay,
+        addMark,
     }
-})();
+})(document);
 
 function createPlayer(name, mark){
     let wins = 0;

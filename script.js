@@ -109,12 +109,10 @@ function createPlayer(name, mark){
 }
 
 const ticTacToe = (function(){
-    let turnCounter = 1;
-    let board = gameboard.getBoard();
     let win = false;
     let playerOne;
     let playerTwo;
-    let playerTurn;
+    let gridSpots = document.querySelectorAll(`.gridspot`);
 
     const play = () =>{
         win = false;

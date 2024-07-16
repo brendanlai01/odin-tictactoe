@@ -198,11 +198,11 @@ const ticTacToe = (function(){
 
     const makePlayer = () =>{
         if(playerOne === undefined) {
-            playerOne = createPlayer('Player One', 'X');
+            playerOne = createPlayer('Player 1', 'X');
             playerOne.changeTurn();
         }
         else if (playerTwo === undefined){
-            playerTwo = createPlayer('Player Two', 'O');
+            playerTwo = createPlayer('Player 2', 'O');
         } 
     }
 

@@ -183,6 +183,19 @@ const ticTacToe = (function(){
         ticTacToe.play();
     }
 
+    const restart = () =>{
+        let i = 0;
+        dialog.close();
+        board.forEach(() =>{
+            board[i] = ' ';
+            i++;
+        });
+        displayController.updateDisplay();
+        result.textContent = ` `;
+        ticTacToe.play();
+        i = 0;
+    }
+
     const makePlayer = () =>{
         if(playerOne === undefined) {
             playerOne = createPlayer('Player One', 'X');

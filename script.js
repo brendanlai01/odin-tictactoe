@@ -10,8 +10,6 @@ const gameboard = (function() {
         [0, 4, 8],
         [2, 4, 6]
     ];
-    let playerOneWins = 0;
-    let playerTwoWins = 0;
 
     const getBoard = () => {
         return board;

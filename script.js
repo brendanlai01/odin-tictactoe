@@ -208,6 +208,7 @@ const ticTacToe = (function(){
 
     return{
         play,
+        restart,
         makePlayer,
     }
 })(document);

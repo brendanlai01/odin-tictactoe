@@ -32,11 +32,11 @@ const gameboard = (function() {
         for(let i = 0; i < WINNING_COMBINATIONS.length; i++){
             const [a, b, c] = WINNING_COMBINATIONS[i];
             if(board[a] === 'X' && board[b] === 'X' && board[c] === 'X' ){
-                console.log('X wins');
-                return true;
+                // console.log('X wins');
+                return 'X wins';
             } else if (board[a] === 'O' && board[b] === 'O' && board[c] === 'O'){
-                console.log('O wins');
-                return true;
+                // console.log('O wins');
+                return 'O wins';
             }
         }
         return false;

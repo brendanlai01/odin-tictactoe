@@ -39,7 +39,8 @@ body{
 }
 
 .player-one, .player-two{
-    border: solid red 1px;
+    background-color: var(--light-grey);
+    border-radius: 2rem;
     width: 250px;
     height: 150px;
 }
@@ -58,4 +59,24 @@ body{
     background-color: white;
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.restart{
+    height: 150px;
+    background-color:var(--light-grey);
+    border-radius: 1rem;
+    border: none;
+    text-align: center;
+}
+
+.restart h1{
+    margin-top: 0;
+    margin-bottom: 27px;
+    color: white;
+}
+
+#restart-button{
+    border-radius: 1rem;
+    font-size: 3rem;
+    padding: 8px 16px 8px 16px;
 }

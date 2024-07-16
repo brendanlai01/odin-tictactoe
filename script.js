@@ -95,7 +95,7 @@ const displayController = (function() {
         }
         else{
             gameboard.add('O', index);
-            currentSquare.textContent = 'X';
+            currentSquare.textContent = 'O';
         } 
     }
 

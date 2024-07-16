@@ -19,6 +19,14 @@ body{
     flex-direction: column;
 }
 
+.gridspot{
+    width: 198px;
+    height: 198px;
+    border: solid black 1px;
+    font-size: 200px;
+    color: black;
+}
+
 .header, .footer{
     background-color: var(--light-grey);
 }

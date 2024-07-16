@@ -52,6 +52,22 @@ const gameboard = (function() {
 })();
 
 const displayController = (function() {
+    let gridSpots = document.querySelectorAll(`.gridspot`);
+
+    const addSpotListeners = (nodes, func) =>{
+        nodes.forEach((item) =>{
+            if(gameboard.checkDupe(item.dataset.index)){
+                item.addEventListener('click', func);
+            }
+        })
+    }
+
+    const removeSpotListeners = (nodes, func) =>{
+        nodes.forEach((item) =>{
+            item.removeEventListener('click', func);
+        })
+    }
+
     }
 
     return{

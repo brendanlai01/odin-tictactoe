@@ -115,40 +115,30 @@ const ticTacToe = (function(){
     let gridSpots = document.querySelectorAll(`.gridspot`);
 
     const play = () =>{
-        win = false;
-        do{
-            if(gameboard.checkWin()){
-                win = true;
-                break;
-           }
-            if(turnCounter === 1){
-                 playerTurn = prompt(" (X's Turn) Where do you want to place your mark?");
-                 playerTurn = parseInt(`${playerTurn}`);
-                 if(gameboard.checkDupe(playerTurn)){
-                    gameboard.add('X', playerTurn);
-                    displayController.display();
-                    turnCounter = 2;
-                    continue;
-                 }else{
-                    alert('Spot is already taken! Rethink of a spot.')
-                    continue;
-                 }
-            }
-            if(turnCounter === 2){
-                playerTurn = prompt(" (O's Turn) Where do you want to place your mark?");
-                playerTurn = parseInt(`${playerTurn}`);
-                if(gameboard.checkDupe(playerTurn)){
-                    gameboard.add('O', playerTurn);
-                    displayController.display();
-                    turnCounter = 1;
-                    continue;
-                 }else{
-                    alert('Spot is already taken! Rethink of a spot.')
-                    continue;
-                 }
-           }
-           
-        } while(win === false)
+        if(gameboard.checkWin() === 'X wins'){
+            console.log('X won');
+            displayController.removeSpotListeners(gridSpots, playOne);
+            displayController.removeSpotListeners(gridSpots, playTwo);
+            win = true;
+            return;
+        }
+        if(gameboard.checkWin() === 'O wins'){
+            console.log('O won');
+            displayController.removeSpotListeners(gridSpots, playOne);
+            displayController.removeSpotListeners(gridSpots, playTwo);
+            win = true;
+            return;
+        }
+        else if(playerOne.getTurn() === 1 && playerTwo.getTurn() === 0){
+            displayController.removeSpotListeners(gridSpots, playTwo);
+            displayController.addSpotListeners(gridSpots, playOne);
+        }
+        else if(playerTwo.getTurn() === 1 && playerOne.getTurn() === 0){
+            displayController.removeSpotListeners(gridSpots, playOne);
+            displayController.addSpotListeners(gridSpots, playTwo);
+        }
+    }
+
     }
 
     const makePlayer = (name, mark) =>{

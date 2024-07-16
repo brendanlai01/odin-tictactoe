@@ -156,12 +156,24 @@ const ticTacToe = (function(){
         displayController.updateDisplay();
         ticTacToe.play();
     }
+
+    const makePlayer = () =>{
+        if(playerOne === undefined) {
+            playerOne = createPlayer('Player One', 'X');
+            playerOne.changeTurn();
+        }
+        else if (playerTwo === undefined){
+            playerTwo = createPlayer('Player Two', 'O');
+        } 
     }
 
     return{
         play,
         makePlayer,
     }
-})();
+})(document);
+
+
+
 
 displayController.display();

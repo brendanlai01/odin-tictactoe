@@ -139,11 +139,23 @@ const ticTacToe = (function(){
         }
     }
 
+    const playOne = (spot) =>{
+        const index =  spot.target.getAttribute("data-index");
+        playerOne.changeTurn();
+        playerTwo.changeTurn();
+        displayController.addMark(index, 'X');
+        displayController.updateDisplay();
+        ticTacToe.play();
     }
 
-    const makePlayer = (name, mark) =>{
-        if(playerOne === undefined) playerOne = createPlayer(name, mark);
-        else if (playerTwo === undefined) playerTwo = createPlayer(name, mark);
+    const playTwo = (spot) =>{
+        const index =  spot.target.getAttribute("data-index");
+        playerOne.changeTurn();
+        playerTwo.changeTurn();
+        displayController.addMark(index, 'O');
+        displayController.updateDisplay();
+        ticTacToe.play();
+    }
     }
 
     return{

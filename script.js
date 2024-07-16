@@ -22,6 +22,15 @@ const gameboard = (function() {
         board[position] = mark;
     };
 
+    const checkFull = () =>{
+        let counter = 0;
+        
+        for(let i = 0; i < board.length; i++){
+            if(board[i] === 'X' || board[i] === 'O') counter++;
+        }
+        return counter;
+    }
+
     const checkDupe = (index) =>{
         if(board[index] === 'X' || board[index] === 'O'){
             return false;
@@ -46,6 +55,7 @@ const gameboard = (function() {
         add,
         checkWin,
         checkDupe,
+        checkFull,
         getBoard,
         indexBoard,
     }

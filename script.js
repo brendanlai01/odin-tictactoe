@@ -176,4 +176,6 @@ const ticTacToe = (function(){
 
 
 
-displayController.display();
+ticTacToe.makePlayer();
+ticTacToe.makePlayer();
+ticTacToe.play();

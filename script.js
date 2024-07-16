@@ -21,15 +21,7 @@ const gameboard = (function() {
     }
     const add = (mark, position) => {
         mark.toUpperCase();
-        // if(checkDupe() === false){
-        //     displayController.display();
-        //     return console.log(`Spot already filled at board index: ${position}`);
-        // }
-        // else{
-            board[position] = mark;
-        //     displayController.display();
-        //     checkWin();
-        // }
+        board[position] = mark;
     };
 
     const checkDupe = (index) =>{

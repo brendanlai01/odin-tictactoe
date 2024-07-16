@@ -98,10 +98,14 @@ const displayController = (function() {
 })(document);
 
 function createPlayer(name, mark){
-    let wins = 0;
-    const getWins = () => wins;
-    const addWin = () => wins++;
-    return {name, mark, getWins, addWin};
+    let turn = 0;
+    const changeTurn = () => {
+        if(turn == 0) turn = 1;
+        else if (turn == 1) turn = 0;
+    }
+    const getTurn = () => turn;
+    const changeName = (newName) => name = newName;
+    return {name, mark, getTurn, changeTurn, changeName};
 }
 
 const ticTacToe = (function(){
